@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function calculateShippingCost(weight, destination) {
+        let cost;
+        if (weight <= 1) {
+            if (destination === 'Local') {
+                cost = 5;
+            } else if (destination === 'National') {
+                cost = 8;
+            } else if (destination === 'International') {
+                cost = 15;
+            }
+        } else if (weight <= 5) {
+            if (destination === 'Local') {
+                cost = 10;
+            } else if (destination === 'National') {
+                cost = 15;
+            } else if (destination === 'International') {
+                cost = 30;
+            }
+        } else if (weight <= 10) {
+            if (destination === 'Local') {
+                cost = 20;
+            } else if (destination === 'National') {
+                cost = 25;
+            } else if (destination === 'International') {
+                cost = 50;
+            }
+        } else { // weight > 10
+            if (destination === 'Local') {
+                cost = 30;
+            } else if (destination === 'National') {
+                cost = 35;
+            } else if (destination === 'International') {
+                cost = 70;
+            }
+        }
+        return cost;
+    }
+    
+    // Example usage
+    const weight = 3; // Example weight
+    const destination = 'National'; // Example destination
+    const shippingCost = calculateShippingCost(weight, destination);
+    console.log(`Total shipping cost: Rs. ${shippingCost}`);
+</script>
+</body>
+</html>
